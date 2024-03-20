@@ -26,5 +26,12 @@ password=driver.find_element(By.NAME,"password")
 password.send_keys("admin123")
 driver.find_element(By.XPATH,"//*/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button").click()
 print("Hi")
-end=input("Provide any key to quit: Ex: type OK and press Enter ::: ")
+login_val=driver.find_element(By.XPATH,"//*/div[1]/div[1]/header/div[1]/div[1]/span/h6").text
+print(login_val)
+login_exp_val="Dashboard"
+if login_val==login_exp_val:
+    print("Validated")
+else:
+    print("Not validated or mismatching")
+end = input("Provide any key to quit: Ex: type OK and press Enter ::: ")
 driver.quit()
